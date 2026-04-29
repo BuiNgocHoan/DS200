@@ -1,0 +1,57 @@
+D:\hadoop\javaProjects\hadoop-mapreduce\src\main\java>javac -encoding UTF-8 -cp "D:\spark\spark-3.5.8-bin-hadoop3\jars\*" com\baitap3\MovieRatingAnalysis.java
+
+D:\hadoop\javaProjects\hadoop-mapreduce\src\main\java>
+D:\hadoop\javaProjects\hadoop-mapreduce\src\main\java>jar -cvf BaiTap3_Spark.jar com\baitap3\*.class
+added manifest
+adding: com/baitap3/MovieRatingAnalysis.class(in = 7628) (out= 3383)(deflated 55%)
+
+D:\hadoop\javaProjects\hadoop-mapreduce\src\main\java>
+D:\hadoop\javaProjects\hadoop-mapreduce\src\main\java>D:\spark\spark-3.5.8-bin-hadoop3\bin\spark-submit.cmd --class com.baitap3.MovieRatingAnalysis BaiTap3_Spark.jar
+26/04/28 21:53:44 INFO SparkContext: Running Spark version 3.5.8
+26/04/28 21:53:44 INFO SparkContext: OS info Windows 11, 10.0, amd64
+26/04/28 21:53:44 INFO SparkContext: Java version 11.0.29
+26/04/28 21:53:44 INFO ResourceUtils: ==============================================================
+26/04/28 21:53:44 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/04/28 21:53:44 INFO ResourceUtils: ==============================================================
+26/04/28 21:53:44 INFO SparkContext: Submitted application: Movie Rating Analysis
+26/04/28 21:53:44 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/04/28 21:53:44 INFO ResourceProfile: Limiting resource is cpu
+26/04/28 21:53:44 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/04/28 21:53:44 INFO SecurityManager: Changing view acls to: Administrator
+26/04/28 21:53:44 INFO SecurityManager: Changing modify acls to: Administrator
+26/04/28 21:53:44 INFO SecurityManager: Changing view acls groups to: 
+26/04/28 21:53:44 INFO SecurityManager: Changing modify acls groups to: 
+26/04/28 21:53:44 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Administrator; groups with view permissions: EMPTY; users with modify permissions: Administrator; groups with modify permissions: EMPTY
+26/04/28 21:53:45 INFO Utils: Successfully started service 'sparkDriver' on port 55962.
+26/04/28 21:53:45 INFO SparkEnv: Registering MapOutputTracker
+26/04/28 21:53:45 INFO SparkEnv: Registering BlockManagerMaster
+26/04/28 21:53:45 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/04/28 21:53:45 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/04/28 21:53:45 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/04/28 21:53:45 INFO DiskBlockManager: Created local directory at C:\Users\Administrator\AppData\Local\Temp\blockmgr-4f5334ef-c21e-4781-bc9f-e54cd241364f
+26/04/28 21:53:45 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+26/04/28 21:53:45 INFO SparkEnv: Registering OutputCommitCoordinator
+26/04/28 21:53:45 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/04/28 21:53:45 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/04/28 21:53:45 INFO SparkContext: Added JAR file:/D:/hadoop/javaProjects/hadoop-mapreduce/src/main/java/BaiTap3_Spark.jar at spark://DESKTOP-O34CS8B:55962/jars/BaiTap3_Spark.jar with timestamp 1777388024644
+26/04/28 21:53:45 INFO Executor: Starting executor ID driver on host DESKTOP-O34CS8B
+26/04/28 21:53:45 INFO Executor: OS info Windows 11, 10.0, amd64
+26/04/28 21:53:45 INFO Executor: Java version 11.0.29
+26/04/28 21:53:45 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+26/04/28 21:53:45 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@5a97b17c for default.
+26/04/28 21:53:45 INFO Executor: Fetching spark://DESKTOP-O34CS8B:55962/jars/BaiTap3_Spark.jar with timestamp 1777388024644
+26/04/28 21:53:45 INFO TransportClientFactory: Successfully created connection to DESKTOP-O34CS8B/192.168.1.10:55962 after 32 ms (0 ms spent in bootstraps)
+26/04/28 21:53:45 INFO Utils: Fetching spark://DESKTOP-O34CS8B:55962/jars/BaiTap3_Spark.jar to C:\Users\Administrator\AppData\Local\Temp\spark-dbbfdffb-43c2-45af-b91d-e4471b6e3377\userFiles-0c720c3b-02ae-4a86-9e11-309f57dcb979\fetchFileTemp12864597816753371718.tmp
+26/04/28 21:53:46 INFO Executor: Adding file:/C:/Users/Administrator/AppData/Local/Temp/spark-dbbfdffb-43c2-45af-b91d-e4471b6e3377/userFiles-0c720c3b-02ae-4a86-9e11-309f57dcb979/BaiTap3_Spark.jar to class loader default
+26/04/28 21:53:46 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 56010.
+26/04/28 21:53:46 INFO NettyBlockTransferService: Server created on DESKTOP-O34CS8B:56010
+26/04/28 21:53:46 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/04/28 21:53:46 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, DESKTOP-O34CS8B, 56010, None)
+26/04/28 21:53:46 INFO BlockManagerMasterEndpoint: Registering block manager DESKTOP-O34CS8B:56010 with 434.4 MiB RAM, BlockManagerId(driver, DESKTOP-O34CS8B, 56010, None)
+26/04/28 21:53:46 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, DESKTOP-O34CS8B, 56010, None)
+26/04/28 21:53:46 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, DESKTOP-O34CS8B, 56010, None)
+PHIM CO DIEM TRUNG BINH CAO NHAT (>= 50 luot danh gia):
+ID Phim: 1015
+Ten Phim: Sunset Boulevard (1950)
+Diem TB: 4.36
+Luot danh gia: 7
