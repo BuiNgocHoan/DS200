@@ -1,0 +1,8 @@
+CLEANLINESS	Positive: 1121, Negative: 227
+COMFORT	Positive: 1108, Negative: 247
+DESIGN&FEATURES	Positive: 701, Negative: 225
+GENERAL	Positive: 4632, Negative: 513
+MISCELLANEOUS	Positive: 46, Negative: 266
+PRICES	Positive: 624, Negative: 81
+QUALITY	Positive: 667, Negative: 403
+STYLE&OPTIONS	Positive: 109, Negative: 146

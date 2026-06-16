@@ -1,0 +1,165 @@
+D:\hadoop\javaProjects\hadoop-mapreduce\src\main\java>javac -encoding UTF-8 -cp "D:\spark\spark-3.5.8-bin-hadoop3\jars\*" com\baitap4\EcommerceDataFrameAnalysis.java
+
+D:\hadoop\javaProjects\hadoop-mapreduce\src\main\java>jar -cvf BaiTap4_DataFrame.jar com\baitap4\*.class
+added manifest
+adding: com/baitap4/EcommerceDataFrameAnalysis.class(in = 7370) (out= 3171)(deflated 56%)
+
+D:\hadoop\javaProjects\hadoop-mapreduce\src\main\java>D:\spark\spark-3.5.8-bin-hadoop3\bin\spark-submit.cmd --class com.baitap4.EcommerceDataFrameAnalysis BaiTap4_DataFrame.jar
+26/05/21 13:05:54 INFO SparkContext: Running Spark version 3.5.8
+26/05/21 13:05:54 INFO SparkContext: OS info Windows 11, 10.0, amd64
+26/05/21 13:05:54 INFO SparkContext: Java version 11.0.29
+26/05/21 13:05:54 INFO ResourceUtils: ==============================================================
+26/05/21 13:05:54 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/05/21 13:05:54 INFO ResourceUtils: ==============================================================
+26/05/21 13:05:54 INFO SparkContext: Submitted application: Ecommerce DataFrame Analysis
+26/05/21 13:05:54 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/05/21 13:05:54 INFO ResourceProfile: Limiting resource is cpu
+26/05/21 13:05:54 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/05/21 13:05:54 INFO SecurityManager: Changing view acls to: Administrator
+26/05/21 13:05:54 INFO SecurityManager: Changing modify acls to: Administrator
+26/05/21 13:05:54 INFO SecurityManager: Changing view acls groups to: 
+26/05/21 13:05:54 INFO SecurityManager: Changing modify acls groups to: 
+26/05/21 13:05:54 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Administrator; groups with view permissions: EMPTY; users with modify permissions: Administrator; groups with modify permissions: EMPTY
+26/05/21 13:05:54 INFO Utils: Successfully started service 'sparkDriver' on port 59060.
+26/05/21 13:05:54 INFO SparkEnv: Registering MapOutputTracker
+26/05/21 13:05:54 INFO SparkEnv: Registering BlockManagerMaster
+26/05/21 13:05:54 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/05/21 13:05:54 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/05/21 13:05:54 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/05/21 13:05:54 INFO DiskBlockManager: Created local directory at C:\Users\Administrator\AppData\Local\Temp\blockmgr-315d0fdc-f0a4-4d6e-b4b8-c2f951c9a9df
+26/05/21 13:05:54 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+26/05/21 13:05:54 INFO SparkEnv: Registering OutputCommitCoordinator
+26/05/21 13:05:55 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/05/21 13:05:55 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/05/21 13:05:55 INFO SparkContext: Added JAR file:/D:/hadoop/javaProjects/hadoop-mapreduce/src/main/java/BaiTap4_DataFrame.jar at spark://192.168.1.176:59060/jars/BaiTap4_DataFrame.jar with timestamp 1779343554043
+26/05/21 13:05:55 INFO Executor: Starting executor ID driver on host 192.168.1.176
+26/05/21 13:05:55 INFO Executor: OS info Windows 11, 10.0, amd64
+26/05/21 13:05:55 INFO Executor: Java version 11.0.29
+26/05/21 13:05:55 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+26/05/21 13:05:55 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@388d14e for default.
+26/05/21 13:05:55 INFO Executor: Fetching spark://192.168.1.176:59060/jars/BaiTap4_DataFrame.jar with timestamp 1779343554043
+26/05/21 13:05:55 INFO TransportClientFactory: Successfully created connection to /192.168.1.176:59060 after 38 ms (0 ms spent in bootstraps)
+26/05/21 13:05:55 INFO Utils: Fetching spark://192.168.1.176:59060/jars/BaiTap4_DataFrame.jar to C:\Users\Administrator\AppData\Local\Temp\spark-70ef7ff4-6b5d-4976-a367-6d2e3f6cb067\userFiles-2cbadc66-d75d-413a-a286-156ede98f5b3\fetchFileTemp6529394583204322351.tmp
+26/05/21 13:05:55 INFO Executor: Adding file:/C:/Users/Administrator/AppData/Local/Temp/spark-70ef7ff4-6b5d-4976-a367-6d2e3f6cb067/userFiles-2cbadc66-d75d-413a-a286-156ede98f5b3/BaiTap4_DataFrame.jar to class loader default
+26/05/21 13:05:55 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 59108.
+26/05/21 13:05:55 INFO NettyBlockTransferService: Server created on 192.168.1.176:59108
+26/05/21 13:05:55 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/05/21 13:05:55 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 192.168.1.176, 59108, None)
+26/05/21 13:05:55 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.1.176:59108 with 434.4 MiB RAM, BlockManagerId(driver, 192.168.1.176, 59108, None)
+26/05/21 13:05:55 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 192.168.1.176, 59108, None)
+26/05/21 13:05:55 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 192.168.1.176, 59108, None)
+========== LOADING DATA ==========
+
+--- QUESTION 2: Overall Statistics ---
+Total orders: 99441
+Total unique customers: 99382
+Total unique sellers: 3095
+
+--- QUESTION 3: Orders by Country ---
++----------------+------------+
+|Customer_Country|Total_Orders|
++----------------+------------+
+|         Germany|       41754|
+|          France|       12848|
+|     Netherlands|       11629|
+|         Belgium|        5464|
+|         Austria|        5043|
+|     Switzerland|        3640|
+|  United Kingdom|        3382|
+|          Poland|        2139|
+|         Czechia|        2034|
+|           Italy|        2025|
++----------------+------------+
+only showing top 10 rows
+
+
+--- QUESTION 4: Orders by Year and Month ---
++----+-----+------------+
+|Year|Month|Total_Orders|
++----+-----+------------+
+|2022|   12|           1|
+|2022|   10|         324|
+|2022|    9|           4|
+|2023|   12|        5673|
+|2023|   11|        7544|
+|2023|   10|        4631|
+|2023|    9|        4285|
+|2023|    8|        4331|
+|2023|    7|        4026|
+|2023|    6|        3245|
++----+-----+------------+
+only showing top 10 rows
+
+
+--- QUESTION 5: Review Score Statistics ---
+System Overall Average Review Score: 4.09
++------------+-----+
+|Review_Score|Count|
++------------+-----+
+|           1|11424|
+|           2| 3151|
+|           3| 8179|
+|           4|19141|
+|           5|57328|
++------------+-----+
+
+
+--- QUESTION 6: 2024 Revenue by Product Category ---
++---------------------+------------------+
+|Product_Category_Name|     Total_Revenue|
++---------------------+------------------+
+|        Health_Beauty| 885191.1200000007|
+|        Watches_Gifts| 771986.7499999991|
+|       Bed_Bath_Table| 650794.6999999994|
+|       Sports_Leisure| 621999.3399999996|
+| Computers_Accesso...| 594771.0400000003|
+|           Housewares| 491576.9600000005|
+|      Furniture_Decor|476466.12999999983|
+|                 Auto|404210.56999999995|
+|                 Baby|299052.56000000006|
+|           Cool_Stuff|273910.05000000005|
++---------------------+------------------+
+only showing top 10 rows
+
+
+--- QUESTION 7: Top Selling Products ---
++--------------------+----------+
+|          Product_ID|Total_Sold|
++--------------------+----------+
+|aca2eb7d00ea1a7b8...|       527|
+|99a4788cb24856965...|       488|
+|422879e10f4668299...|       484|
+|389d119b48cf3043d...|       392|
+|368c6c730842d7801...|       388|
++--------------------+----------+
+only showing top 5 rows
+
+Average Review Score per Product:
++--------------------+------------------+
+|          Product_ID|  Avg_Review_Score|
++--------------------+------------------+
+|0b0172eb0fd18479d...|             3.875|
+|42a2bd596fda1baef...|               4.0|
+|460a66fcc404a3d73...|3.8333333333333335|
+|30360c8b0b2ac6918...| 4.666666666666667|
+|13b4ff901d43edec6...|               5.0|
++--------------------+------------------+
+only showing top 5 rows
+
+
+--- QUESTION 8: Delivery Performance (Days Difference) ---
++--------------------+----------------------------+-------------------+------------------+
+|            Order_ID|Order_Delivered_Carrier_Date|Shipping_Limit_Date|Delivery_Diff_Days|
++--------------------+----------------------------+-------------------+------------------+
+|00010242fe8c5a6d1...|         2023-09-19 18:34:00|2023-09-19 09:45:00|                 0|
+|00018f77f2f0320c5...|         2023-05-04 14:35:00|2023-05-03 11:05:00|                 1|
+|000229ec398224ef6...|         2024-01-16 12:36:00|2024-01-18 14:48:00|                -2|
+|00024acbcdf0a6daa...|         2024-08-10 13:28:00|2024-08-15 10:10:00|                -5|
+|00042b26cf59d7ce6...|         2023-02-16 09:46:00|2023-02-13 13:57:00|                 3|
+|00048cc3ae777c65d...|         2023-05-17 11:05:00|2023-05-23 03:55:00|                -6|
+|00054e8431b9d7675...|         2023-12-12 01:07:00|2023-12-14 12:10:00|                -2|
+|000576fe39319847c...|         2024-07-05 12:15:00|2024-07-10 12:30:00|                -5|
+|0005a1a1728c9d785...|         2024-03-28 00:37:00|2024-03-26 18:31:00|                 2|
+|0005f50442cb953dc...|         2024-07-03 14:25:00|2024-07-06 14:10:00|                -3|
++--------------------+----------------------------+-------------------+------------------+
+only showing top 10 rows

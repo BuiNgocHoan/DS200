@@ -1,0 +1,84 @@
+D:\hadoop\javaProjects\hadoop-mapreduce\src\main\java>javac -encoding UTF-8 -cp "D:\spark\spark-3.5.8-bin-hadoop3\jars\*" com\baitap3\AgeGroupRatingAnalysis.java
+
+D:\hadoop\javaProjects\hadoop-mapreduce\src\main\java>jar -cvf BaiTap3_Spark.jar com\baitap3\*.class
+added manifest
+adding: com/baitap3/AgeGroupRatingAnalysis.class(in = 8935) (out= 3881)(deflated 56%)
+adding: com/baitap3/GenderRatingAnalysis.class(in = 8716) (out= 3769)(deflated 56%)
+adding: com/baitap3/GenreRatingAnalysis.class(in = 8087) (out= 3589)(deflated 55%)
+adding: com/baitap3/MovieRatingAnalysis.class(in = 7628) (out= 3383)(deflated 55%)
+
+D:\hadoop\javaProjects\hadoop-mapreduce\src\main\java>D:\spark\spark-3.5.8-bin-hadoop3\bin\spark-submit.cmd --class com.baitap3.AgeGroupRatingAnalysis BaiTap3_Spark.jar
+26/04/29 20:44:41 INFO SparkContext: Running Spark version 3.5.8
+26/04/29 20:44:41 INFO SparkContext: OS info Windows 11, 10.0, amd64
+26/04/29 20:44:41 INFO SparkContext: Java version 11.0.29
+26/04/29 20:44:41 INFO ResourceUtils: ==============================================================
+26/04/29 20:44:41 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/04/29 20:44:41 INFO ResourceUtils: ==============================================================
+26/04/29 20:44:41 INFO SparkContext: Submitted application: Age Group Analysis
+26/04/29 20:44:41 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/04/29 20:44:41 INFO ResourceProfile: Limiting resource is cpu
+26/04/29 20:44:41 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/04/29 20:44:41 INFO SecurityManager: Changing view acls to: Administrator
+26/04/29 20:44:41 INFO SecurityManager: Changing modify acls to: Administrator
+26/04/29 20:44:41 INFO SecurityManager: Changing view acls groups to: 
+26/04/29 20:44:41 INFO SecurityManager: Changing modify acls groups to: 
+26/04/29 20:44:41 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Administrator; groups with view permissions: EMPTY; users with modify permissions: Administrator; groups with modify permissions: EMPTY
+26/04/29 20:44:42 INFO Utils: Successfully started service 'sparkDriver' on port 60698.
+26/04/29 20:44:42 INFO SparkEnv: Registering MapOutputTracker
+26/04/29 20:44:42 INFO SparkEnv: Registering BlockManagerMaster
+26/04/29 20:44:42 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/04/29 20:44:42 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/04/29 20:44:42 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/04/29 20:44:42 INFO DiskBlockManager: Created local directory at C:\Users\Administrator\AppData\Local\Temp\blockmgr-0a247176-777f-47d2-b666-e3f0aef2f3ee
+26/04/29 20:44:42 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+26/04/29 20:44:42 INFO SparkEnv: Registering OutputCommitCoordinator
+26/04/29 20:44:42 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/04/29 20:44:42 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/04/29 20:44:42 INFO SparkContext: Added JAR file:/D:/hadoop/javaProjects/hadoop-mapreduce/src/main/java/BaiTap3_Spark.jar at spark://DESKTOP-O34CS8B:60698/jars/BaiTap3_Spark.jar with timestamp 1777470281175
+26/04/29 20:44:42 INFO Executor: Starting executor ID driver on host DESKTOP-O34CS8B
+26/04/29 20:44:42 INFO Executor: OS info Windows 11, 10.0, amd64
+26/04/29 20:44:42 INFO Executor: Java version 11.0.29
+26/04/29 20:44:42 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+26/04/29 20:44:42 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@5a97b17c for default.
+26/04/29 20:44:42 INFO Executor: Fetching spark://DESKTOP-O34CS8B:60698/jars/BaiTap3_Spark.jar with timestamp 1777470281175
+26/04/29 20:44:42 INFO TransportClientFactory: Successfully created connection to DESKTOP-O34CS8B/192.168.1.10:60698 after 41 ms (0 ms spent in bootstraps)
+26/04/29 20:44:42 INFO Utils: Fetching spark://DESKTOP-O34CS8B:60698/jars/BaiTap3_Spark.jar to C:\Users\Administrator\AppData\Local\Temp\spark-9c1f45a6-dd36-4964-b420-9f4aa168338f\userFiles-f496e106-099c-4909-8aa9-1e11a61d4961\fetchFileTemp4373633392804484435.tmp
+26/04/29 20:44:42 INFO Executor: Adding file:/C:/Users/Administrator/AppData/Local/Temp/spark-9c1f45a6-dd36-4964-b420-9f4aa168338f/userFiles-f496e106-099c-4909-8aa9-1e11a61d4961/BaiTap3_Spark.jar to class loader default
+26/04/29 20:44:43 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 60746.
+26/04/29 20:44:43 INFO NettyBlockTransferService: Server created on DESKTOP-O34CS8B:60746
+26/04/29 20:44:43 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/04/29 20:44:43 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, DESKTOP-O34CS8B, 60746, None)
+26/04/29 20:44:43 INFO BlockManagerMasterEndpoint: Registering block manager DESKTOP-O34CS8B:60746 with 434.4 MiB RAM, BlockManagerId(driver, DESKTOP-O34CS8B, 60746, None)
+26/04/29 20:44:43 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, DESKTOP-O34CS8B, 60746, None)
+26/04/29 20:44:43 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, DESKTOP-O34CS8B, 60746, None)
+Ten Phim                                 | Nhom Tuoi    | Diem TB
+Lawrence of Arabia (1962)                | 45-49        | 3.50
+Gladiator (2000)                         | 25-34        | 3.42
+Fight Club (1999)                        | 25-34        | 3.50
+The Social Network (2010)                | 45-49        | 4.00
+The Lord of the Rings: The Return o...   | 50-55        | 3.50
+Mad Max: Fury Road (2015)                | 35-44        | 3.64
+Sunset Boulevard (1950)                  | 50-55        | 4.50
+Mad Max: Fury Road (2015)                | 18-24        | 3.00
+The Silence of the Lambs (1991)          | 45-49        | 3.00
+E.T. the Extra-Terrestrial (1982)        | 45-49        | 4.00
+The Terminator (1984)                    | 25-34        | 4.10
+The Terminator (1984)                    | 45-49        | 4.25
+The Lord of the Rings: The Fellowsh...   | 18-24        | 4.00
+No Country for Old Men (2007)            | 25-34        | 3.80
+The Lord of the Rings: The Fellowsh...   | 50-55        | 4.25
+Lawrence of Arabia (1962)                | 50-55        | 3.75
+The Terminator (1984)                    | Tren 56      | 3.75
+E.T. the Extra-Terrestrial (1982)        | 18-24        | 3.50
+Mad Max: Fury Road (2015)                | 25-34        | 3.40
+Gladiator (2000)                         | 50-55        | 3.75
+The Social Network (2010)                | 25-34        | 4.00
+Sunset Boulevard (1950)                  | 45-49        | 4.50
+Fight Club (1999)                        | 50-55        | 3.50
+Lawrence of Arabia (1962)                | 35-44        | 3.28
+The Terminator (1984)                    | 50-55        | 4.00
+The Terminator (1984)                    | 35-44        | 4.00
+No Country for Old Men (2007)            | Tren 56      | 3.50
+Gladiator (2000)                         | 45-49        | 4.00
+The Lord of the Rings: The Return o...   | 45-49        | 4.50
+Psycho (1960)                            | 25-34        | 4.50

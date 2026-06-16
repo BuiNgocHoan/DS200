@@ -1,0 +1,69 @@
+D:\hadoop\javaProjects\hadoop-mapreduce\src\main\java>javac -encoding UTF-8 -cp "D:\spark\spark-3.5.8-bin-hadoop3\jars\*" com\baitap3\OccupationRatingAnalysis.java
+
+D:\hadoop\javaProjects\hadoop-mapreduce\src\main\java>jar -cvf BaiTap3_Spark.jar com\baitap3\*.class
+added manifest
+adding: com/baitap3/AgeGroupRatingAnalysis.class(in = 8935) (out= 3881)(deflated 56%)
+adding: com/baitap3/GenderRatingAnalysis.class(in = 8716) (out= 3769)(deflated 56%)
+adding: com/baitap3/GenreRatingAnalysis.class(in = 8087) (out= 3589)(deflated 55%)
+adding: com/baitap3/MovieRatingAnalysis.class(in = 7628) (out= 3383)(deflated 55%)
+adding: com/baitap3/OccupationRatingAnalysis.class(in = 7984) (out= 3367)(deflated 57%)
+
+D:\hadoop\javaProjects\hadoop-mapreduce\src\main\java>D:\spark\spark-3.5.8-bin-hadoop3\bin\spark-submit.cmd --class com.baitap3.OccupationRatingAnalysis BaiTap3_Spark.jar
+26/04/29 20:48:35 INFO SparkContext: Running Spark version 3.5.8
+26/04/29 20:48:35 INFO SparkContext: OS info Windows 11, 10.0, amd64
+26/04/29 20:48:35 INFO SparkContext: Java version 11.0.29
+26/04/29 20:48:35 INFO ResourceUtils: ==============================================================
+26/04/29 20:48:35 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/04/29 20:48:35 INFO ResourceUtils: ==============================================================
+26/04/29 20:48:35 INFO SparkContext: Submitted application: Occupation Rating Analysis
+26/04/29 20:48:35 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/04/29 20:48:35 INFO ResourceProfile: Limiting resource is cpu
+26/04/29 20:48:35 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/04/29 20:48:35 INFO SecurityManager: Changing view acls to: Administrator
+26/04/29 20:48:35 INFO SecurityManager: Changing modify acls to: Administrator
+26/04/29 20:48:35 INFO SecurityManager: Changing view acls groups to: 
+26/04/29 20:48:35 INFO SecurityManager: Changing modify acls groups to: 
+26/04/29 20:48:35 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Administrator; groups with view permissions: EMPTY; users with modify permissions: Administrator; groups with modify permissions: EMPTY
+26/04/29 20:48:35 INFO Utils: Successfully started service 'sparkDriver' on port 60191.
+26/04/29 20:48:35 INFO SparkEnv: Registering MapOutputTracker
+26/04/29 20:48:35 INFO SparkEnv: Registering BlockManagerMaster
+26/04/29 20:48:35 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/04/29 20:48:35 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/04/29 20:48:35 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/04/29 20:48:36 INFO DiskBlockManager: Created local directory at C:\Users\Administrator\AppData\Local\Temp\blockmgr-4ad0417c-b357-48ce-b1cd-4f68f0ed48c2
+26/04/29 20:48:36 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+26/04/29 20:48:36 INFO SparkEnv: Registering OutputCommitCoordinator
+26/04/29 20:48:36 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/04/29 20:48:36 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/04/29 20:48:36 INFO SparkContext: Added JAR file:/D:/hadoop/javaProjects/hadoop-mapreduce/src/main/java/BaiTap3_Spark.jar at spark://DESKTOP-O34CS8B:60191/jars/BaiTap3_Spark.jar with timestamp 1777470515078
+26/04/29 20:48:36 INFO Executor: Starting executor ID driver on host DESKTOP-O34CS8B
+26/04/29 20:48:36 INFO Executor: OS info Windows 11, 10.0, amd64
+26/04/29 20:48:36 INFO Executor: Java version 11.0.29
+26/04/29 20:48:36 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+26/04/29 20:48:36 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@5a97b17c for default.
+26/04/29 20:48:36 INFO Executor: Fetching spark://DESKTOP-O34CS8B:60191/jars/BaiTap3_Spark.jar with timestamp 1777470515078
+26/04/29 20:48:36 INFO TransportClientFactory: Successfully created connection to DESKTOP-O34CS8B/192.168.1.10:60191 after 38 ms (0 ms spent in bootstraps)
+26/04/29 20:48:36 INFO Utils: Fetching spark://DESKTOP-O34CS8B:60191/jars/BaiTap3_Spark.jar to C:\Users\Administrator\AppData\Local\Temp\spark-18342ce4-360a-42bc-ad3e-5937f689b782\userFiles-8e49d448-2331-4288-bf3c-7b2c936dc622\fetchFileTemp18029938282575343594.tmp
+26/04/29 20:48:36 INFO Executor: Adding file:/C:/Users/Administrator/AppData/Local/Temp/spark-18342ce4-360a-42bc-ad3e-5937f689b782/userFiles-8e49d448-2331-4288-bf3c-7b2c936dc622/BaiTap3_Spark.jar to class loader default
+26/04/29 20:48:36 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 60239.
+26/04/29 20:48:36 INFO NettyBlockTransferService: Server created on DESKTOP-O34CS8B:60239
+26/04/29 20:48:36 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/04/29 20:48:36 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, DESKTOP-O34CS8B, 60239, None)
+26/04/29 20:48:36 INFO BlockManagerMasterEndpoint: Registering block manager DESKTOP-O34CS8B:60239 with 434.4 MiB RAM, BlockManagerId(driver, DESKTOP-O34CS8B, 60239, None)
+26/04/29 20:48:36 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, DESKTOP-O34CS8B, 60239, None)
+26/04/29 20:48:36 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, DESKTOP-O34CS8B, 60239, None)
+Nghe Nghiep               | Diem TB      | Luot Danh Gia
+Nurse                     | 3.86         | 11
+Teacher                   | 3.70         | 5
+Student                   | 4.00         | 8
+Artist                    | 3.73         | 11
+Doctor                    | 3.69         | 21
+Journalist                | 3.85         | 17
+Consultant                | 3.86         | 14
+Manager                   | 3.47         | 16
+Lawyer                    | 3.65         | 17
+Salesperson               | 3.65         | 17
+Engineer                  | 3.53         | 17
+Designer                  | 3.96         | 12
+Programmer                | 4.25         | 10
+Accountant                | 3.58         | 6
