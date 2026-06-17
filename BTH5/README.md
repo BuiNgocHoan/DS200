@@ -14,7 +14,7 @@
 
 ## Tóm Tắt Dự Án
 
-Dự án xây dựng **hệ thống đếm người qua camera** sử dụng **kiến trúc microservices** và **Big Data batch processing**. Hệ thống bao gồm 3 servers độc lập giao tiếp qua TCP, xử lý video realtime từ webcam laptop, nhận diện người bằng YOLOv8, và lưu kết quả dạng batch.
+Dự án xây dựng **hệ thống đếm người qua camera** sử dụng **kiến trúc microservices** và **Batch processing**. Hệ thống bao gồm 3 servers độc lập giao tiếp qua TCP, xử lý video realtime từ webcam laptop, nhận diện người bằng YOLOv8, và lưu kết quả dạng batch.
 
 ---
 
