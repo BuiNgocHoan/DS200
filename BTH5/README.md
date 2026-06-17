@@ -3,6 +3,7 @@
 **Công nghệ:** YOLOv8 | Python | TCP Sockets | Batch Processing | Big Data
  
 **Sinh viên:** Bùi Ngọc Hoàn
+
 **Ngày hoàn thành:** 16-06-2026
 
 ---
