@@ -49,3 +49,13 @@ runs/
 Thumbs.db
 .DS_Store
 *.ini
+# Large files
+*.pt
+*.pth
+*.weights
+
+# Runtime output
+storage_server/output/
+detection_server/runs/
+__pycache__/
+.venv/

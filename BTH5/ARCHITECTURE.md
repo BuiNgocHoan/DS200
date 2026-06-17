@@ -38,75 +38,75 @@
 │          ┌──────────────────┼──────────────────┐             │
 │          │ (Chờ response)   │                  │             │
 │          │                  ▼                  │             │
-│          │  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓  │              │
-│          │  ┃      SERVER 2               ┃  │               │
-│          │  ┃  DETECTION_SERVER.PY        ┃  │               │
-│          │  ┃ (Nhận Diện Người - YOLOv8) ┃  │               │
-│          │  ┃                             ┃  │               │
-│          │  ┃ • Lắng nghe :6101          ┃  │               │
-│          │  ┃ • Nhận JSON payload        ┃  │               │
-│          │  ┃ • Giải mã base64 → ảnh    ┃  │               │
-│          │  ┃ • Chạy YOLOv8 detect      ┃  │               │
-│          │  ┃   - Model: yolov8n.pt     ┃  │               │
-│          │  ┃   - Class: person (0)     ┃  │               │
-│          │  ┃   - Threshold: 0.40       ┃  │               │
-│          │  ┃ • Trích bounding boxes    ┃  │               │
-│          │  ┃   {x1, y1, x2, y2, conf} ┃  │            │
-│          │  ┃ • Gửi response về Server1 ┃  │            │
-│          │  ┃ • Forward kết quả → :6102 ┃  │            │
-│          │  ┃                             ┃  │            │
-│          │  ┃ Port: 6101 (server socket) ┃  │            │
-│          │  ┃ Kết nối: 6102 (client)     ┃  │            │
-│          │  ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛  │            │
-│          │                  │                  │            │
-│  (Response) {boxes, count}   │                  │            │
-│          │                  │ (TCP :6102)      │            │
-│          └──────────────────┼──────────────────┤            │
-│                             │ JSON: {frame_id, │            │
-│                             │ person_count,    │            │
-│                             │ boxes, process_ms}            │
+│          │  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓   │             │
+│          │  ┃      SERVER 2                ┃   │             │
+│          │  ┃  DETECTION_SERVER.PY         ┃   │             │
+│          │  ┃ (Nhận Diện Người - YOLOv8)   ┃   │             │
+│          │  ┃                              ┃   │             │
+│          │  ┃ • Lắng nghe :6101            ┃   │             │
+│          │  ┃ • Nhận JSON payload          ┃   │             │
+│          │  ┃ • Giải mã base64 → ảnh       ┃   │             │
+│          │  ┃ • Chạy YOLOv8 detect         ┃   │             │
+│          │  ┃   - Model: yolov8n.pt        ┃   │             │
+│          │  ┃   - Class: person (0)        ┃   │             │
+│          │  ┃   - Threshold: 0.40          ┃   │             │
+│          │  ┃ • Trích bounding boxes       ┃   │             │
+│          │  ┃   {x1, y1, x2, y2, conf}     ┃   │             │
+│          │  ┃ • Gửi response về Server1    ┃   │             │
+│          │  ┃ • Forward kết quả → :6102    ┃   │             │
+│          │  ┃                              ┃   │             │
+│          │  ┃ Port: 6101 (server socket)   ┃   │             │
+│          │  ┃ Kết nối: 6102 (client)       ┃   │             │
+│          │  ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛   │             │
+│          │                  │                  │             │
+│  (Response) {boxes, count}  │                  │             │
+│          │                  │ (TCP :6102)      │             │
+│          └──────────────────┼──────────────────┤             │
+│                             │ JSON: {frame_id, │             │
+│                             │ person_count,    │             │
+│                             │ boxes, process_ms}             │
 │                             ▼                                │
-│  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓   │
-│  ┃                   SERVER 3                            ┃   │
-│  ┃              STORAGE_SERVER.PY                        ┃   │
-│  ┃         (Lưu Trữ & Batch Processing)                ┃   │
-│  ┃                                                       ┃   │
-│  ┃  • Lắng nghe :6102 (server socket)                  ┃   │
-│  ┃  • Nhận JSON kết quả từ Detection                   ┃   │
-│  ┃  • Gom vào buffer (batch manager)                   ┃   │
-│  ┃  • Khi đủ điều kiện:                                ┃   │
-│  ┃    - Timeout: 10 giây OR                            ┃   │
-│  ┃    - Kích thước: 5 frames                           ┃   │
-│  ┃  • Ghi batch vào CSV:                               ┃   │
-│  ┃    storage_server/output/results_local.csv          ┃   │
-│  ┃  • Cột: frame_id, timestamp, datetime, person_count │  │
-│  ┃         process_ms, boxes_json                      ┃   │
-│  ┃                                                       ┃   │
-│  ┃  Port: 6102 (server socket)                         ┃   │
-│  ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛   │
+│  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓      │
+│  ┃                   SERVER 3                         ┃      │
+│  ┃              STORAGE_SERVER.PY                     ┃      │
+│  ┃         (Lưu Trữ & Batch Processing)               ┃      │
+│  ┃                                                    ┃      │
+│  ┃  • Lắng nghe :6102 (server socket)                 ┃      │
+│  ┃  • Nhận JSON kết quả từ Detection                  ┃      │
+│  ┃  • Gom vào buffer (batch manager)                  ┃      │
+│  ┃  • Khi đủ điều kiện:                               ┃      │
+│  ┃    - Timeout: 10 giây OR                           ┃      │
+│  ┃    - Kích thước: 5 frames                          ┃      │
+│  ┃  • Ghi batch vào CSV:                              ┃      │
+│  ┃    storage_server/output/results_local.csv         ┃      │
+│  ┃  • Cột: frame_id, timestamp, datetime, person_count│      │
+│  ┃         process_ms, boxes_json                     ┃      │
+│  ┃                                                    ┃      │
+│  ┃  Port: 6102 (server socket)                        ┃      │
+│  ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛      │
 │                             │                                │
 │                    (Batch write)                             │
 │                             ▼                                │
-│  ┌────────────────────────────────────────────────────────┐ │
-│  │                     CSV FILE                           │ │
-│  │  storage_server/output/results_local.csv              │ │
-│  │                                                        │ │
-│  │  frame_id | timestamp | person_count | process_ms |  │ │
-│  │  ---------|-----------|---------------|----------    │ │
-│  │     1     | 17183.... |      2       |  45.3 ms    │ │
-│  │     2     | 17183.... |      2       |  43.1 ms    │ │
-│  │     3     | 17183.... |      1       |  44.8 ms    │ │
-│  │    ...    |    ...    |     ...      |   ...       │ │
-│  └────────────────────────────────────────────────────────┘ │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │                     CSV FILE                           │  │
+│  │  storage_server/output/results_local.csv               │  │
+│  │                                                        │  │
+│  │  frame_id | timestamp | person_count | process_ms |    │  │
+│  │  ---------|-----------|---------------|----------      │  │
+│  │     1     | 17183.... |      2       |  45.3 ms    │   │  │
+│  │     2     | 17183.... |      2       |  43.1 ms    │   │  │
+│  │     3     | 17183.... |      1       |  44.8 ms    │   │  │
+│  │    ...    |    ...    |     ...      |   ...       │   │  │
+│  └────────────────────────────────────────────────────────┘  │
 │                                                              │
 └──────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 🔄 Luồng Dữ Liệu (Data Flow)
+## Luồng Dữ Liệu (Data Flow)
 
-### 1️⃣ Capture Phase (Server 1)
+### Capture (Server 1)
 
 ```
 Webcam (30 FPS)
@@ -128,7 +128,7 @@ socket.send(JSON + "\n") → TCP:6101
 
 ---
 
-### 2️⃣ Detection Phase (Server 2)
+### Detection (Server 2)
 
 ```
 TCP socket nhận (localhost:6101)
@@ -160,7 +160,7 @@ socket.send(forward + "\n") → TCP:6102 (Server 3)
 
 ---
 
-### 3️⃣ Storage Phase (Server 3 - Batch Processing)
+### Storage (Server 3 - Batch Processing)
 
 ```
 TCP socket nhận (localhost:6102)
@@ -193,7 +193,7 @@ Tiếp tục lắng nghe
 
 ---
 
-## 🧵 Threading & Concurrency
+## Threading & Concurrency
 
 ### Server 1 (Camera)
 ```python
@@ -253,7 +253,7 @@ CSV write threads:
 
 ---
 
-## 💾 Batch Processing (Big Data Concept)
+## Batch Processing
 
 ### Tại Sao Batch?
 
@@ -305,7 +305,7 @@ class BatchManager:
 
 ---
 
-## 🔌 TCP Communication Protocol
+## TCP Communication Protocol
 
 ### Cấu Trúc Message
 
@@ -355,7 +355,7 @@ Server → Client:
 
 ---
 
-## 📊 Độ Phức Tạp (Complexity)
+## Độ Phức Tạp (Complexity)
 
 ### Time Complexity
 
@@ -383,66 +383,25 @@ Server → Client:
 
 ---
 
-## 🔍 Error Handling
+## Error Handling
 
 ### Server 1 (Camera)
-- ❌ Camera không mở → Raise exception, thoát
-- ❌ TCP timeout → Tự động reconnect
-- ❌ Mất frame → Bỏ qua, tiếp tục
+- Camera không mở → Raise exception, thoát
+- TCP timeout → Tự động reconnect
+- Mất frame → Bỏ qua, tiếp tục
 
 ### Server 2 (Detection)
-- ❌ Nhận JSON sai → Catch exception, log, continue
-- ❌ YOLOv8 lỗi → Raise exception, worker thread dừng
-- ❌ TCP send failed → Reset connection, reconnect
+- Nhận JSON sai → Catch exception, log, continue
+- YOLOv8 lỗi → Raise exception, worker thread dừng
+-  TCP send failed → Reset connection, reconnect
 
 ### Server 3 (Storage)
-- ❌ CSV write failed → Log, tiếp tục buffer (retry later)
-- ❌ Kết nối Detection mất → Tự reconnect khi có dữ liệu
+-  CSV write failed → Log, tiếp tục buffer (retry later)
+-  Kết nối Detection mất → Tự reconnect khi có dữ liệu
 
 ---
 
-## 🚀 Nâng Cấp Tương Lai
-
-### 1. GPU Support
-```python
-# Sửa detection_server.py
-model = YOLO("yolov8n.pt")
-model.to("cuda")  # GPU acceleration
-# Thời gian: 40-50ms → 5-10ms
-```
-
-### 2. Multiple Cameras
-```python
-# Chạy nhiều camera_server instances
-python camera_server.py --camera 0
-python camera_server.py --camera 1
-python camera_server.py --camera 2
-```
-
-### 3. Distributed Storage (HDFS/Spark)
-```python
-# Thay write_batch_to_csv bằng:
-spark.createDataFrame(rows).write.parquet("/hdfs/path")
-# Tự động phân tán dữ liệu trên cluster
-```
-
-### 4. Database (PostgreSQL)
-```python
-# Thay CSV bằng:
-db.insert_batch(rows)  # Insert vào Database
-# Có thể query, join, tính toán phức tạp
-```
-
-### 5. Real-time Dashboard
-```python
-# Thêm Server 4: Dashboard Server
-# Streaming CSV data → Web UI (Streamlit/Dash)
-# Hiển thị realtime chart: người/phút
-```
-
----
-
-## 📈 Metrics & Monitoring
+## Metrics & Monitoring
 
 ### Hiệu Suất Hiện Tại
 
@@ -467,7 +426,7 @@ Disk I/O: ~1 write per 10s
 ---
 
 **Kiến trúc này có thể scale lên hàng triệu frames/day bằng cách:**
-- ✅ Thêm GPU
-- ✅ Dùng distributed storage (HDFS)
-- ✅ Thêm worker nodes
-- ✅ Dùng message queue (Kafka)
+- Thêm GPU
+- Dùng distributed storage (HDFS)
+- Thêm worker nodes
+- Dùng message queue (Kafka)
