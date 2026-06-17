@@ -4,6 +4,10 @@
  
 **Sinh viên:** Bùi Ngọc Hoàn
 
+**MSSV:** 23520510
+
+**Lớp:** DS200.Q21.1
+
 **Ngày hoàn thành:** 16-06-2026
 
 ---
@@ -178,15 +182,3 @@ print(f"Số người tối đa: {max_people}")
 - [Batch Processing Concepts](https://en.wikipedia.org/wiki/Batch_processing)
 
 ---
-
-## License
-
-MIT License - Tự do sử dụng & sửa đổi
-
----
-
-## Tác Giả
-
-- **Sinh viên:** Bùi Ngọc Hoàn
-- **MSSV:** 23520510
-- **Lớp:** DS200.Q21.1
